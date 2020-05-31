@@ -1,0 +1,93 @@
+#concise command advise for github etc
+
+##installing git on machine
+linux -> use OS cmd, e.g. sudo apt install git
+Windows/MacOS -> https://git-scm.com -> downloads -> chose OS/Arch appropriate
+-- confirm install with git --version in cmd/terminal
+
+##creating a new repository on github
+Best to be done via github.com -> simply locate the "New" button in the repositories tab
+
+##configuring git
+git config [args]
+
+//view all configurations
+git config --list
+
+//system wide (all users)
+git config --system
+
+//user wide
+git config --global
+
+//project wide
+git config
+
+##advised to set up name and email -->
+git config --global user.name "John Smith"
+git config --global user.email "johnsmith@bigtech.com"
+
+
+##getting started with remote repo
+git remote add origin https://github.com/myuser/
+//ssh
+git remote add origin git@github.com:myuser
+
+//show remote origin
+git remote show origin        
+
+##clone github repo locally
+//while in directory to clone
+git clone https://github.com/myuser/myrepo
+//ssh
+git clone git@github.com:myuser/myrepo
+
+##committing changes
+##first: stage changes 
+//following creation of new/alteration of existing files
+//while in altered directory
+
+git add .          #. is recursive for all within, so be careful
+
+//or
+ 
+git add ./myfile
+
+//stage all changes related to commit/feature set
+
+##second: check staged changes
+git status
+
+//to unstage
+git restor --staged ./myfile
+ 
+//if happy then ...
+
+##commit changes
+git commit -m "my commit message"
+
+##synch to github
+git push remote origin [branch] 
+
+##tracking all changes/log
+git log
+
+//filter last n commits
+git log -n [n]
+
+//filter from
+git log since 2020-01-01
+
+//filter to
+git log until 2020-03-03
+
+
+
+
+
+
+
+
+
+
+
